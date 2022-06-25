@@ -1,0 +1,39 @@
+﻿@model NeoForum.Models.NeoFileViewModel
+@{
+    ViewData["Title"] = "Files";
+}
+
+<div class="text-left">
+    <h2 class="main__title">Файловый архив</h2>
+    <hr />
+    @if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+    {
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="files" multiple class="form-control" style="width:400px;"/>
+            <button type="submit" class="btn btn-primary btn-upload"><i class="fa fa-download" aria-hidden="true"></i> Загрузить</button>
+        </form>
+    }
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success" style="margin-top:50px; display:flex; justify-content:space-between;">           
+            @ViewBag.Message
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрыть"></button>
+        </div>
+    }
+
+    <div>
+        @foreach (var item in Model.Files)
+        {
+            <div class="container articles-list-item">
+                <div class="container__name__time">
+                    <p class="chat-link-online file-text"><i class="fa fa-file" aria-hidden="true"></i>  @item.Name</p>
+                    <div>
+                        <a asp-action="Download" asp-route-filename="@item.Name" class="btn btn-primary"><i class="fa fa-download" aria-hidden="true"></i></a>
+                    </div> 
+                </div>
+                
+            </div>
+        }
+    </div>
+
+</div>

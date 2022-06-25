@@ -1,0 +1,35 @@
+﻿@model NeoForum.Models.Article
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Удаление</h2>
+
+<h2>Вы действительно хотите удалить данную статью?</h2>
+
+<div class="articles-list">
+    <div>
+        <h2 class="section-title">@Model.Title</h2>
+        <p>Категория:</p>
+        <p>@Model.Categories</p>
+        <textarea class="txta" style="resize:none; min-height:300px; width:100%;" disabled>@Model.Text</textarea>
+        <div class="container__name__time__details">
+            <div>
+                <p>Автор:</p>
+                <p>@Model.Author</p>
+            </div>
+            <div>
+                <p>Дата написания:</p>   
+                <p>@Model.When.ToString("dd/MM/yyyy HH:mm")</p>
+            </div> 
+        </div>
+    </div>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-primary">Назад</a>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<System.Security.Claims.Claim>
+
+<h2 class="main__title">Утверждения</h2>
+<br />
+<table class="table table-sm table-bordered">
+    <tr>
+        <th>Субъект</th>
+        <th>Эмитент</th>
+        <th>Тип</th>
+        <th>Знчение</th>
+    </tr>
+  
+    @foreach (var claim in Model.OrderBy(x => x.Type))
+    {
+        <tr>
+            <td>@claim.Subject.Name</td>
+            <td>@claim.Issuer</td>
+            <td>@claim.Type</td>
+            <td>@claim.Value</td>
+        </tr>
+    }
+</table>

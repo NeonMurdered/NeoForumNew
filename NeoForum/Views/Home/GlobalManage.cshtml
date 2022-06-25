@@ -1,0 +1,20 @@
+﻿
+@{
+	ViewData["Title"] = "Global Manage";
+}
+@if(User.IsInRole("Admin"))
+{
+<div>
+    <h2 class="main__title">Управление данными</h2>
+    <hr />
+    <div class="articles-list">
+        <div>
+            <ul class="nav nav-pills flex-column nav-manage">
+               <li class="nav-item"><a class="nav-link manage-link" href="~/Role/Index">Роли</a></li>
+               <li class="nav-item"><a class="nav-link manage-link" href="~/Users/Index">Пользователи</a></li>
+               <li class="nav-item"><a class="nav-link manage-link" href="~/Claims/Index">Утверждения</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<NeoForum.Models.Article>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="main__title">Статьи</h2>
+<hr />
+
+@if(User.IsInRole("Admin") || User.IsInRole("Moderator"))
+{
+    <p>
+       <a asp-action="Create" class="btn btn-primary article-create"><i class="fa fa-plus" aria-hidden="true"></i> Создать новую статью</a>
+    </p>
+}
+
+<div class="article-search">
+    <form method="get" asp-action="Index">
+        <input type="search" placeholder="Поиск по статьям..." value="@ViewData["Getemploeedetails"]" name="searching" class="form-control form-article"/>
+        <input type="submit" value="Поиск" class="btn btn-primary"/>
+        <a asp-action="Index" class="btn btn-primary"><i class="fa fa-list" aria-hidden="true"></i></a>
+    </form>
+</div>
+
+
+
+<div class="articles-list">
+    <div>
+    @foreach (var item in Model) 
+    {
+        <div class="container articles-list-item">
+            <div class="container__name__time">
+                <a asp-action="Details" asp-route-id="@item.Id" class="articles-link">@item.Title</a>
+                <p class="articles-text-time">@item.When.ToString("dd/MM/yyyy HH:mm")</p>
+            </div>
+            <p class="articles-text">@Html.DisplayFor(modelItem => item.Text)</p>
+            @if(User.IsInRole("Admin") || User.IsInRole("Moderator"))
+            {
+               <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+               <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+            } 
+        </div>
+    }       
+    </div>   
+</div>

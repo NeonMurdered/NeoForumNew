@@ -1,0 +1,749 @@
+html {
+  font-size: 14px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+header {
+    background-color: black;
+}
+
+body {
+    margin-bottom: 60px;
+    background: url(../images/bg.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.footer {
+    background-color: black;
+}
+
+a {
+    color: black;
+}
+
+p {
+    margin-top: 1rem;
+    color: #cbace9;
+}
+
+.card {
+    border-radius: 10px;
+    border-color: blueviolet;
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+}
+
+div.login-logout-tab div.card-header {
+    padding: 0px 0px 12px 0px;
+}
+
+div.login-logout-tab ul.nav-tabs {
+    margin: 0px 0px -12px 0px;
+}
+
+div.login-logout-tab li.nav-item {
+    width: 50%;
+}
+
+div.login-logout-tab a.nav-link {
+    font-size: 23px;
+    color: black;
+    text-align: center;
+}
+
+div.card-content {
+    padding: 10px 20px;
+}
+
+div.login-form-icon {
+    text-align: center;
+}
+
+.form-floating {
+    margin-bottom: 15px;    
+}
+
+.form-control {
+    background-color: blueviolet;
+    border: 1px solid #0d6efd;
+    opacity: 0.8;
+
+    transition: background-color 0.5s linear;
+}
+
+.form-control:focus {
+    color: black;
+    background-color: #ac45cf;
+}
+
+.w-100 {
+    background-color: blueviolet;
+    color: black;
+    transition: background-color 1s linear;
+}
+
+.nav-tabs .nav-link.active {
+    border-color: blueviolet;
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+    color: blueviolet;
+}
+
+.nav-tabs .nav-link {
+    transition: border-color 0.5s linear;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: blueviolet;
+}
+
+.navbar-light .navbar-brand {
+    color: violet;
+    font-family: 'Train One', cursive;
+    text-shadow:
+    /* glow */
+    0 0 7px #8a2be2, 0 0 10px #8a2be2, 0 0 21px #8a2be2,
+    /* glow */
+    0 0 42px #0000ff, 0 0 82px #0000ff, 0 0 92px #0000ff, 0 0 102px #0000ff, 0 0 151px #0000ff;
+}
+
+.username {
+    text-shadow:
+    /* glow */
+    0 0 7px #8a2be2, 
+    0 0 10px #8a2be2, 
+    0 0 21px #8a2be2,
+    /* glow */
+    0 0 42px #0000ff, 
+    0 0 82px #0000ff, 
+    0 0 92px #0000ff, 
+    0 0 102px #0000ff, 
+    0 0 151px #0000ff;
+}
+
+.main-title {
+    margin-top: 40px;
+    font-size: 60px;
+    animation: neon 5s steps(1, start) infinite reverse;
+    font-family: 'Train One', cursive;
+}
+
+@keyframes neon {
+    0% {
+        color: #0b3960;
+        text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
+    }
+
+    80% {
+        color: violet;
+        text-shadow: 0 0 6px #8a2be2,0 0 10px #8a2be2,0 0 50px #79a7fc;
+    }
+
+    81% {
+        color: blueviolet;
+        text-shadow: 0 0 6px #8a2be2,0 0 10px #8a2be2,0 0 50px #79a7fc;
+    }
+
+    82% {
+        color: #0b3960;
+        text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
+    }
+
+    83% {
+        color: blueviolet;
+        text-shadow: 0 0 6px #8a2be2,0 0 10px #8a2be2,0 0 50px #79a7fc;
+    }
+
+    84% {
+        color: #0b3960;
+        text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
+    }
+
+    85% {
+        color: blueviolet;
+        text-shadow: 0 0 6px #8a2be2,0 0 10px #8a2be2,0 0 50px #79a7fc;
+    }
+
+    100% {
+        color: #0b3960;
+        text-shadow: 0 0 7px #0b3960,0 0 8px #0b3960;
+    }
+}
+
+.navbar-light .navbar-brand:hover {
+    color: violet;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: blueviolet;
+    transition: color 1s linear;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: violet;
+}
+
+.navbar-brand {
+    margin-right: 1.50em;
+}
+
+.navbar-light .navbar-toggler {
+    border: 1px solid blueviolet;
+    color: blueviolet;
+}
+
+.navbar-light .navbar-toggler-icon {
+    fill: blueviolet;
+}
+
+.footer__text {
+    text-align: center;
+    color: blueviolet;
+    line-height: 20px;
+}
+
+div.login-form-icon {
+    margin-bottom: 15px;
+}
+
+.fas {
+    color: blueviolet;
+}
+
+.form-label {
+    color: black;
+    font-weight: 500;
+}
+
+.form-check-input {
+    background-color: blueviolet;
+}
+
+.form-check-input:checked {
+    background-color: #ac45cf;
+}
+
+.alert-warning {
+    color: orange;
+    background-color: blueviolet;
+    border-color: orange;
+}
+
+.alert-success {
+    color: black;
+    background-color: green;
+    border-color: black;
+}
+
+h2 {
+    color: blueviolet;
+}
+
+.nav-pills .nav-link {
+    color: blueviolet;
+}
+
+.nav-pills .nav-link.active {
+    color: blueviolet;
+    background: url(../images/bgd.png) center no-repeat;
+}
+
+div.login-form-icon-partial {
+    margin-bottom: 0px;
+    margin-top: 4px;
+    margin-right: 5px;
+}
+
+.container__name__time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+p {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.bg__primary {
+    padding: 0 10px;
+    color: gray;
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+}
+
+.bg__default {
+    padding: 0 10px;
+    color: gray;
+}
+
+.form-group {
+    display: flex;
+}
+
+.row {
+    margin-right: 0;
+}
+
+.row>* {
+    padding-right: 0;
+}
+
+#chatinner {
+    max-height: 393px;
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    border: 1px solid blueviolet;
+    overflow-y: scroll;
+}
+
+#chatinner::-webkit-scrollbar {
+    width: 14px;
+    border-radius: 5px;
+    background-color: blueviolet;
+}
+
+#chatinner::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rebeccapurple;
+}
+
+#stiky {
+    position: sticky;
+    bottom: 0;
+    background-color: blueviolet;
+}
+
+#messageText {
+    border-color: violet;
+}
+
+th {
+    color: violet;
+}
+
+tr {
+    color: violet;
+    
+}
+
+tbody {
+    border-color: blueviolet;
+}
+
+label {
+    color: blueviolet;
+    margin-right: 10px;
+}
+
+.main__inner {
+    margin: 0 auto;
+    font-size: 25px;
+    text-align: center;
+}
+
+.main__text {
+    margin-top: 10px;
+    color: violet;
+}
+
+#discordinvite {
+    height: 600px;
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    border: 1px solid blueviolet;
+}
+
+#newarticles {
+    height: 600px;
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    border: 1px solid blueviolet;
+}
+
+.main__item {
+    margin: 0 auto;
+}
+
+.main__title {
+    text-align: center;
+    color: violet;
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    border: 1px solid blueviolet;
+}
+
+.txta {
+    resize: none;
+    margin: 10px 0;
+}
+
+.txta::-webkit-scrollbar {
+    width: 14px;
+    border-radius: 5px;
+    background-color: blueviolet;
+}
+
+.txta::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+}
+
+.cancel-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.articles-list {
+    margin: 10px 0;
+}
+
+.articles-list-item {
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    border: 1px solid blueviolet;
+    margin: 10px 0;
+}
+
+.articles-link {
+    color: violet;
+    transition: color 0.5s linear
+}
+
+.articles-link:hover {
+    color: blueviolet;
+}
+
+.articles-text {
+    color: violet;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.articles-text-time {
+    color: lightgray;
+}
+
+.section-title {
+    text-align: center;
+}
+
+.container__name__time__details {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+textarea:disabled {
+    color: #cbace9;
+    border: 1px solid blueviolet;
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+}
+
+.manage-link {
+    font-size: 25px;
+    transition: color 0.5s linear;
+}
+
+.manage-link:hover {
+    color: violet;
+}
+
+.form-search::-webkit-input-placeholder {
+    color: violet;
+}
+
+.nav-manage {
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    border: 1px solid blueviolet;
+    align-content: center;
+    align-items: center;
+}
+
+.role-list {
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    border: 1px solid blueviolet;
+}
+
+.sender {
+    color: violet;
+}
+
+.chatp {
+    color: white;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.chat-section {
+    display: flex;
+    align-items: flex-start;
+}
+
+.chat-nav {
+    width: 22%;
+    height: 430px;
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    border: 1px solid blueviolet;
+}
+
+.chat-link-online {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 1px solid blueviolet;
+    color: violet;
+}
+
+.chat-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 1px solid blueviolet;
+    color: blueviolet;
+    transition: 0.5s linear;
+}
+
+.chat-link:hover {
+    color: violet;
+}
+
+.chat-zone {
+    width: 78%;
+    height: auto;
+    max-height: 400px;
+}
+
+.chat-zone::-webkit-scrollbar {
+    width: 14px;
+    border-radius: 5px;
+    background-color: blueviolet;
+}
+
+.chat-zone::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rebeccapurple;
+}
+
+.chat-input {
+    border: 1px solid blueviolet;
+    border-radius: 10px;
+}
+
+.message {
+    display: flex;
+    flex-direction: row;
+    padding: 0.2rem;
+    margin-top: 0.2rem;
+}
+
+.message-sender {
+    min-width: 15%;
+    text-align: center;
+}
+
+.message-text {
+    margin: 0;
+    flex-grow: 5;
+}
+
+.message-time {
+    min-width: 10%;
+}
+
+.chat__offset {
+    margin: 10px 0;
+    padding: 0 20px;
+    display: flex;
+
+}
+
+.chat__offset__image {
+    align-items: center;
+}
+
+.text-white {
+    max-width: 300px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.article-create {
+    margin-bottom: 10px;
+}
+
+.article-search {
+    display: flex;
+    align-items: center;
+}
+
+.form-article {
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    color: violet;
+    margin-bottom: 10px;
+}
+
+.form-article:focus {
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+    color: violet;
+}
+
+.form-article::placeholder {
+    color: violet;
+}
+
+.form-article::-webkit-search-cancel-button {
+    color: violet;
+}
+
+.form-article:focus-visible {
+    border: none;
+}
+
+.file-text {
+    overflow: hidden;
+}
+
+/*_____________ 
+    Buttons 
+_____________*/
+
+.btn-primary {
+    color: black;
+    background-color: #ac45cf;
+}
+
+.btn-primary:hover {
+    color: black;
+    background-color: #ac45cf;
+}
+
+.btn-outline {
+    color: black;
+    border-color: none;
+    transition: color 0.5s linear;
+}
+
+.btn:hover {
+    color: violet;
+}
+
+.btn-danger:hover {
+    color: black;
+}
+
+.btn-role {
+    margin-bottom: 10px;
+}
+
+.btn-upload {
+    margin-top: 10px;
+}
+
+.btn-secondary {
+    margin-bottom: 10px;
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+    color: blueviolet;
+    border-color: blueviolet;
+    transition: color 0.5s linear;
+    transition: border-color 0.5s linear;
+}
+
+.btn-secondary:hover {
+    color: violet;
+    border-color: violet;
+    background: url(../images/bgd.png) center no-repeat;
+    background-size: cover;
+}
+
+/*_____________ 
+    Media 
+_____________*/
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main__inner {
+        display: block;
+    }
+
+    .main__item {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    table thead {
+        display: none;
+    }
+
+    table tr {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    table td {
+        display: block;
+        text-align: right;
+    }
+
+    table td:before {
+        content: attr(aria-label);
+        float: left;
+        font-weight: bold;
+    }
+
+    .chat-section {
+        display: block;
+    }
+
+    .chat-nav {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .chat-link {
+        border-bottom: none;
+    }
+
+    .chat-zone {
+        width: 100%;
+    }
+}
+

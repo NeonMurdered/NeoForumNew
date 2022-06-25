@@ -1,0 +1,89 @@
+﻿@page
+@using NeoForum.Models.Enums
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+    //Начальный макет
+    Layout = "~/Areas/Identity/Pages/_AuthLayout.cshtml";
+}
+
+
+<form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-floating">
+               <input asp-for="Input.FirstName" class="form-control" autocomplete="on" aria-required="true" />
+               <label asp-for="Input.FirstName" class="form-label"></label>
+               <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating">
+               <input asp-for="Input.LastName" class="form-control" autocomplete="on" aria-required="true" />
+               <label asp-for="Input.LastName" class="form-label"></label>
+               <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-floating">
+         <input asp-for="Input.UserName" class="form-control" autocomplete="on" aria-required="true" />
+         <label asp-for="Input.UserName" class="form-label"></label>
+         <span asp-validation-for="Input.UserName" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating">
+        <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+        <label asp-for="Input.Email" class="form-label"></label>
+        <span asp-validation-for="Input.Email" class="text-danger"></span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input asp-for="Input.Age" class="form-control" autocomplete="off" aria-required="true" />
+                <label asp-for="Input.Age" class="form-label"></label>
+                <span asp-validation-for="Input.Age" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+             <div class="form-floating">
+                <select asp-for="Input.Country" asp-items="@new SelectList(Enum.GetNames(typeof(Country)))" class="form-control">
+                    <option selected disabled value="Select">Выберите Страну</option>
+                </select>
+                <label asp-for="Input.Country" class="form-label"></label>
+                <span asp-validation-for="Input.Country" class="text-danger"></span>
+             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                <label asp-for="Input.Password" class="form-label"></label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+             <div class="form-floating">
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                <label asp-for="Input.ConfirmPassword" class="form-label"></label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+             </div>
+        </div>
+    </div>
+    
+   
+    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Зарегестрироваться</button>
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

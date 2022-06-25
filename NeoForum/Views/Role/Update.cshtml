@@ -1,0 +1,54 @@
+﻿@using NeoForum.Areas.Identity.Data
+@model RoleEdit
+  
+<h2>Обновить роль</h2>
+<a asp-action="Index" class="btn btn-sm btn-primary">Назад</a>
+<div asp-validation-summary="All" class="text-danger"></div>
+ 
+<div class="role-list">
+   <form method="post">
+       <input type="hidden" name="roleName" value="@Model.Role.Name" />
+       <input type="hidden" name="roleId" value="@Model.Role.Id" />
+         
+       <h2>Добавить в роль @Model.Role.Name</h2>
+       <table class="table table-bordered table-sm">
+           @if (Model.NonMembers.Count() == 0)
+           {
+               <tr><td colspan="2">Все пользователи имеют данную роль</td></tr>
+           }
+           else
+           {
+               @foreach (NeoForumUser user in Model.NonMembers)
+               {
+                   <tr>
+                       <td>@user.UserName</td>
+                       <td>
+                           <input type="checkbox" name="AddIds" value="@user.Id">
+                       </td>
+                   </tr>
+               }
+           }
+       </table>
+     
+       <h2>Удалить из роли @Model.Role.Name</h2>
+       <table class="table table-bordered table-sm">
+           @if (Model.Members.Count() == 0)
+           {
+               <tr><td colspan="2">Нет пользователей с данной ролью</td></tr>
+           }
+           else
+           {
+               @foreach (NeoForumUser user in Model.Members)
+               {
+                   <tr>
+                       <td>@user.UserName</td>
+                       <td>
+                           <input type="checkbox" name="DeleteIds" value="@user.Id">
+                       </td>
+                   </tr>
+               }
+           }
+       </table>
+       <button type="submit" class="btn btn-primary">Сохранить</button>
+   </form>
+</div>

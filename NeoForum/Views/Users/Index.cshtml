@@ -1,0 +1,32 @@
+﻿@using NeoForum.Areas.Identity.Data
+@model IEnumerable<NeoForumUser>
+
+@inject UserManager<NeoForumUser> UserManager
+
+<h2 class="main__title">Пользователи</h2>
+
+<div class="role-list">  
+   <table class="table table-sm table-bordered">
+       <tr><th>Изображение</th><th>Имя пользователя</th><th>Персональные данные</th></tr>
+       @foreach (NeoForumUser user in Model)
+        {
+            <tr>
+                <td>
+                    @if (@user.ProfilePicture != null)
+                    {
+                        <img style="width:40px;height:40px; object-fit:cover; border-radius:30px" src="data:image/*;base64,@(Convert.ToBase64String(@user.ProfilePicture))">
+                    }
+                    @if (@user.ProfilePicture is null)
+                    {
+                        <img style="width:40px;height:40px; object-fit:cover; border-radius:30px" src="~/images/defaultimg.png">
+                    }
+                </td>
+                <td>@user.UserName</td>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Email</td>
+                <td>@user.Age</td>
+       </tr>
+       }
+   </table>
+</div>

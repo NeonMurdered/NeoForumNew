@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using NeoForum.Areas.Identity.Data
+
+@inject SignInManager<NeoForumUser> SignInManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+       <a href="~/Articles/Index" class="nav-link"><i class="fa fa-book" aria-hidden="true"></i> Статьи</a>
+    </li>
+
+    <li class="nav-item">
+       <a href="~/NeoFiles/Index" class="nav-link"><i class="fa fa-archive" aria-hidden="true"></i> Файлы</a>
+    </li>
+
+    <li class="nav-item">
+       <a href="~/Messages/Index" class="nav-link"><i class="fa fa-commenting" aria-hidden="true"></i> Общение</a>
+    </li>
+
+    @if(User.IsInRole("Admin"))
+    {
+       <li class="nav-item">
+           <a href="~/Home/GlobalManage" class="nav-link"><i class="fa fa-cog" aria-hidden="true"></i> Управление</a>
+       </li>
+    }
+}
+</ul>

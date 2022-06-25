@@ -1,0 +1,100 @@
+﻿@model IEnumerable<NeoForum.Models.AdminMessage>
+
+@{
+    ViewData["Title"] = "AdminChat";
+    var userName = User.Identity.Name;
+}
+
+<div class="chat__inner">
+    <div class="main__item">
+        <h2 class="main__title">Админ Чат</h2>
+        <hr />
+
+        <div class="chat-section">
+            <div class="chat-nav">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="chat-link" href="~/Messages/Index">Общий Чат</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="chat-link" href="~/AdminMessages/Index">Админ Чат</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="chat-zone">
+                <div class="chat-body" id="chatinner">
+                    <div class="row">
+                        <div class="col-md-12" id="chat">
+                            @if (Model != null)
+                            {
+                                @foreach (var adminmessage in Model.OrderBy(m => m.When))
+                                {
+                                    string containerClass, timePosition, textAlign, contcolor, offset;
+                                    if (userName == adminmessage.UserName)
+                                    {
+                                        containerClass = "container";
+                                        timePosition = "time-left text-gray";
+                                        textAlign = "text-left text-white";
+                                        contcolor = "bg__primary";
+                                        offset = "chat__offset";
+                                    }
+                                    else
+                                    {
+                                        containerClass = "container";
+                                        timePosition = "time-left text-gray";
+                                        textAlign = "text-left text-white";
+                                        contcolor = "bg__default";
+                                        offset = "chat__offset";
+                                    }
+
+                                    <div class="row">
+                                        <div class="@offset">
+                                            <div class="chat__offset__image">
+                                                <i class="fas fa-user-circle fa-3x"></i>
+                                            </div>
+                                            <div class="@containerClass @contcolor">
+                                                <div class="container__name__time">
+                                                    <p class="sender">@adminmessage.UserName</p>
+                                                    <span class="@timePosition">@adminmessage.When.ToString("dd/MM/yyyy HH:mm")</span>
+                                                </div>
+                                                <p class="@textAlign">@adminmessage.Text</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input" id="stiky">
+                    <form asp-action="Create"
+                       data-ajax-begin="clearInputField" data-ajax-complete=""
+                       data-ajax-failure="alert('Fail')" data-ajax-success="sendMessage"
+                       data-ajax="true" data-ajax-method="POST">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <input type="submit" value="Отправить" id="submitButton" class="btn btn-outline btn-block" />
+                            <input name="Text" class="form-control" id="messageText" />
+                        </div>
+                        <input type="hidden" value="@userName" name="username" />
+                    </form>
+                </div>         
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@if (User.Identity.IsAuthenticated)
+{
+    <script>
+        const userName = "@ViewBag.CurrentUserName";
+    </script>
+}
+
+@section scripts {
+    <script src="~/signalr/signalr.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/js/chat.js"></script>
+    <script src="~/js/signalrReqHandler.js"></script>
+}
